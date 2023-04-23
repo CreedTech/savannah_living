@@ -1,2 +1,101 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
 {% load static %}
+<html lang="en-US">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>404 | Savannah Supported Living Limited</title>
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com/" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous"
+        href="{% static 'assets/fonts/new/Onilife-Medium.woff2' %}" />
+    {% include "partials/styles.html" %}
+
+</head>
+
+<body
+    class="error404 wp-embed-responsive ehf-header ehf-footer ehf-template-onilife ehf-stylesheet-demo-child safari no-wc-breadcrumb theme-onilife elementor-default elementor-kit-4">
+    <div id="page" class="hfeed site">
+
+        {% include "partials/navbar.html" %}
+        <div class="breadcrumb-wrap">
+			<div data-elementor-type="wp-post" data-elementor-id="4830" class="elementor elementor-4830">
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-b5dcd67 elementor-section-full_width elementor-section-height-min-height elementor-section-stretched elementor-section-height-default elementor-section-items-middle"
+					data-id="b5dcd67" data-element_type="section"
+					data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="elementor-background-overlay"></div>
+					<div class="elementor-container elementor-column-gap-no">
+						<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-fb3fdbb"
+							data-id="fb3fdbb" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-54a2ac3 hidden-onilife-title-single-yes elementor-widget elementor-widget-onilife-breadcrumb"
+									data-id="54a2ac3" data-element_type="widget"
+									data-widget_type="onilife-breadcrumb.default">
+									<div class="elementor-widget-container">
+										<div class="breadcrumb" typeof="BreadcrumbList" vocab="">
+											<div class="breadcrumb-listItem">
+												<span property="itemListElement" typeof="ListItem"><a property="item"
+														typeof="WebPage" title="Go to Home."
+														href="{% url 'index' %}" class="home"><span
+															property="name">Home</span></a>
+													<meta property="position" content="1">
+												</span><i class="onilife-icon-minus"></i><span
+													property="itemListElement" typeof="ListItem"><a property="item"
+														typeof="WebPage" title="Go to 404." href=""
+														class="404 current-item" aria-current="page"><span
+															property="name">404</span></a>
+													<meta property="position" content="2">
+												</span>
+											</div>
+											<h1 class="onilife-title">
+												Error 404 </h1>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div id="content" class="site-content" tabindex="-1">
+			<div class="col-full">
+				<div id="primary" class="content">
+					<main id="main" class="site-main">
+						<div class="error-404 not-found">
+							<div class="page-content">
+								<header class="page-header">
+									<h1 class="sub-title">404</h1>
+									<h2 class="sub-title">Oops! That page can&#039;t be found</h2>
+								</header>
+								<div class="error-text">
+									<span>The page you are looking for does not exist. It might have been moved or
+										deleted. </span>
+								</div>
+								<div class="button-error-wrapper">
+									<a href="javascript: history.go(-1)" class="button-link">
+										<span class="button-content">
+											<span class="button-text">back to homepage</span>
+											<i class="onilife-icon-chevron-circle-right"></i>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</main>
+				</div>
+			</div>
+		</div>
+        {% include "partials/footer.html" %}
+    </div>
+
+    {% include "partials/mobile_nav.html" %}
+    <div class="onilife-overlay"></div>
+    {% include 'partials/scripts.html' %}
+</body>
+
+
+</html>
