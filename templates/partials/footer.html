@@ -123,7 +123,7 @@
                                 data-id="04218aa" data-element_type="widget" data-widget_type="button.default">
                                 <div class="elementor-widget-container">
                                     <div class="elementor-button-wrapper">
-                                        <a href="schedule-a-visit/index.html"
+                                        <a href="{% url 'schedule_visit' %}"
                                             class="elementor-button-link elementor-button elementor-size-sm"
                                             role="button">
                                             <span class="elementor-button-content-wrapper">
@@ -155,29 +155,14 @@
                                 data-widget_type="icon-list.default">
                                 <div class="elementor-widget-container">
                                     <ul class="elementor-icon-list-items">
+                                        
                                         <li class="elementor-icon-list-item">
-                                            <a href="services-amennities/index.html">
-                                                <span class="elementor-icon-list-text">Services</span>
-                                            </a>
-                                        </li>
-                                        <li class="elementor-icon-list-item">
-                                            <a href="about-us/index.html">
+                                            <a href="{% url 'about' %}">
                                                 <span class="elementor-icon-list-text">Our Story</span>
                                             </a>
                                         </li>
                                         <li class="elementor-icon-list-item">
-                                            <a href="living-options/index.html">
-                                                <span class="elementor-icon-list-text">
-                                                    Careers</span>
-                                            </a>
-                                        </li>
-                                        <li class="elementor-icon-list-item">
-                                            <a href="blog/index.html">
-                                                <span class="elementor-icon-list-text">Blog</span>
-                                            </a>
-                                        </li>
-                                        <li class="elementor-icon-list-item">
-                                            <a href="contact/index.html">
+                                            <a href="{% url 'contact' %}">
                                                 <span class="elementor-icon-list-text">Contact Us</span>
                                             </a>
                                         </li>
@@ -245,20 +230,15 @@
                                 data-widget_type="icon-list.default">
                                 <div class="elementor-widget-container">
                                     <ul class="elementor-icon-list-items">
+                                        
                                         <li class="elementor-icon-list-item">
-                                            <a href="lifestyle/index.html">
-                                                <span class="elementor-icon-list-text">Lifestyle
+                                            <a href="{% url 'faqs' %}">
+                                                <span class="elementor-icon-list-text">Faqs
                                                 </span>
                                             </a>
                                         </li>
                                         <li class="elementor-icon-list-item">
-                                            <a href="#">
-                                                <span class="elementor-icon-list-text">Testimonials
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="elementor-icon-list-item">
-                                            <a href="our-communities/index.html">
+                                            <a href="{% url 'communities' %}">
                                                 <span class="elementor-icon-list-text">Our Communities</span>
                                             </a>
                                         </li>
@@ -336,7 +316,7 @@
                                 data-widget_type="text-editor.default">
                                 <div class="elementor-widget-container">
                                     <div>
-                                        Copyright © 2022
+                                        Copyright © <script>document.write(new Date().getFullYear())</script>
                                         <a style="color: #fff" href="{% url 'index' %}">Savannah Supported Living Limited</a>.
                                         All rights reserved.
                                     </div>

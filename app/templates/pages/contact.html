@@ -21,17 +21,17 @@
                             data-id="af3e806" data-element_type="widget"
                             data-widget_type="onilife-breadcrumb.default">
                             <div class="elementor-widget-container">
-                                <div class="breadcrumb" typeof="BreadcrumbList" vocab="https://schema.org/">
+                                <div class="breadcrumb" typeof="BreadcrumbList" vocab="">
                                     <div class="breadcrumb-listItem">
                                         <span property="itemListElement" typeof="ListItem"><a property="item"
                                                 typeof="WebPage" title="Go to Home."
-                                                href="https://demo2.pavothemes.com/onilife" class="home"><span
+                                                href="{% url 'index' %}" class="home"><span
                                                     property="name">Home</span></a>
                                             <meta property="position" content="1">
                                         </span><i class="onilife-icon-minus"></i><span
                                             property="itemListElement" typeof="ListItem"><span property="name"
                                                 class="post post-page current-item">Contact</span>
-                                            <meta property="url" content="index.html">
+                                            <meta property="url" content="{% url 'index' %}">
                                             <meta property="position" content="2">
                                         </span>
                                     </div>
