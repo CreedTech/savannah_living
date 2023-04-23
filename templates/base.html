@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-US">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>{% block title %}{% endblock title %} | Savannah Supported Living Limited</title>
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com/" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous"
+        href="{% static 'assets/fonts/new/Onilife-Medium.woff2' %}" />
+    {% include "partials/styles.html" %}
+
+</head>
+
+<body
+    class="page-template page-template-template-homepage page-template-template-homepage-php page page-id-5024 wp-embed-responsive ehf-header ehf-footer ehf-template-onilife ehf-stylesheet-demo-child no-wc-breadcrumb theme-onilife elementor-default elementor-kit-4 elementor-page elementor-page-5024">
+    <div id="page" class="hfeed site">
+
+        {% include "partials/navbar.html" %}
+        {% block content %}
+
+        {% endblock content %}
+        {% include "partials/footer.html" %}
+    </div>
+
+    {% include "partials/mobile_nav.html" %}
+    <div class="onilife-overlay"></div>
+    {% include 'partials/scripts.html' %}
+</body>
+
+
+</html>

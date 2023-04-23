@@ -1,0 +1,213 @@
+{% load static %}
+<script data-cfasync="false"
+        src="{% static '/assets/js/email-decode.min.js' %}"></script>
+    <script>
+        (function () {
+            function maybePrefixUrlField() {
+                if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                    this.value = 'http://' + this.value;
+                }
+            }
+
+            var urlFields = document.querySelectorAll(
+                '.mc4wp-form input[type="url"]'
+            );
+            if (urlFields) {
+                for (var j = 0; j < urlFields.length; j++) {
+                    urlFields[j].addEventListener('blur', maybePrefixUrlField);
+                }
+            }
+        })();
+    </script>
+    <link rel="stylesheet" id="elementor-post-1719-css"
+        href="{% static 'uploads/elementor/css/post-17198025.css?ver=1663731276' %}" media="all" />
+    <link rel="stylesheet" id="magnific-popup-css"
+        href="{% static 'assets/css/libs/magnific-popup8a54.css?ver=1.0.0' %}" media="all" />
+    <link rel="stylesheet" id="elementor-post-2364-css"
+        href="{% static 'uploads/elementor/css/post-2364328a.css?ver=1663731277' %}" media="all" />
+    <link rel="stylesheet" id="e-animations-css"
+        href="{% static 'plugins/elementor/assets/lib/animations/animations.min87e3.css?ver=3.7.6' %}" media="all" />
+    <script src="{% static 'plugins/contact-form-7/includes/swv/js/index42f0.js?ver=5.6.3' %}" id="swv-js"></script>
+    <script id="contact-form-7-js-extra">
+        var wpcf7 = {
+            api: {
+                root: 'https:\/\/demo2.pavothemes.com\/onilife\/wp-json\/',
+                namespace: 'contact-form-7\/v1',
+            },
+        };
+    </script>
+    <script src="{% static 'plugins/contact-form-7/includes/js/index42f0.js?ver=5.6.3' %}" id="contact-form-7-js"></script>
+    <script src="{% static 'js/underscore.minb37e.js?ver=1.13.3' %}" id="underscore-js"></script>
+    <script id="wp-util-js-extra">
+        var _wpUtilSettings = {
+            ajax: { url: '\/onilife\/wp-admin\/admin-ajax.php' },
+        };
+    </script>
+    <script src="{% static 'js/wp-util.min1eb7.js?ver=6.0.3' %}" id="wp-util-js"></script>
+    <script id="onilife-theme-js-extra">
+        var onilifeAjax = {
+            ajaxurl:
+                'https:\/\/demo2.pavothemes.com\/onilife\/wp-admin\/admin-ajax.php',
+        };
+    </script>
+    <script src="{% static 'assets/js/frontend/main8a54.js?ver=1.0.0' %}" id="onilife-theme-js"></script>
+    <script src="{% static 'assets/js/skip-link-focus-fix.min08e0.js?ver=20130115' %}"
+        id="onilife-skip-link-focus-fix-js"></script>
+    <script src="{% static 'assets/js/frontend/search-popup8a54.js?ver=1.0.0' %}"
+        id="onilife-search-popup-js"></script>
+    <script src="{% static 'assets/js/frontend/text-editor8a54.js?ver=1.0.0' %}"
+        id="onilife-text-editor-js"></script>
+    <script src="{% static 'assets/js/frontend/nav-mobile8a54.js?ver=1.0.0' %}"
+        id="onilife-nav-mobile-js"></script>
+    <script src="{% static 'inc/megamenu/assets/js/frontend8a54.js?ver=1.0.0' %}"
+        id="onilife-megamenu-frontend-js"></script>
+    <script src="{% static 'assets/js/frontend/login8a54.js?ver=1.0.0' %}"
+        id="onilife-ajax-login-js"></script>
+    <script src="{% static 'plugins/elementor/assets/js/webpack.runtime.min87e3.js?ver=3.7.6' %}"
+        id="elementor-webpack-runtime-js"></script>
+    <script src="{% static 'plugins/elementor/assets/js/frontend-modules.min87e3.js?ver=3.7.6' %}"
+        id="elementor-frontend-modules-js"></script>
+    <script src="{% static 'plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2' %}"
+        id="elementor-waypoints-js"></script>
+    <script src="{% static 'js/jquery/ui/core.min0028.js?ver=1.13.1' %}" id="jquery-ui-core-js"></script>
+    <script id="elementor-frontend-js-before">
+        var elementorFrontendConfig = {
+            environmentMode: {
+                edit: false,
+                wpPreview: false,
+                isScriptDebug: false,
+            },
+            i18n: {
+                shareOnFacebook: 'Share on Facebook',
+                shareOnTwitter: 'Share on Twitter',
+                pinIt: 'Pin it',
+                download: 'Download',
+                downloadImage: 'Download image',
+                fullscreen: 'Fullscreen',
+                zoom: 'Zoom',
+                share: 'Share',
+                playVideo: 'Play Video',
+                previous: 'Previous',
+                next: 'Next',
+                close: 'Close',
+            },
+            is_rtl: false,
+            breakpoints: { xs: 0, sm: 480, md: 768, lg: 1025, xl: 1440, xxl: 1600 },
+            responsive: {
+                breakpoints: {
+                    mobile: {
+                        label: 'Mobile',
+                        value: 767,
+                        default_value: 767,
+                        direction: 'max',
+                        is_enabled: true,
+                    },
+                    mobile_extra: {
+                        label: 'Mobile Extra',
+                        value: 880,
+                        default_value: 880,
+                        direction: 'max',
+                        is_enabled: true,
+                    },
+                    tablet: {
+                        label: 'Tablet',
+                        value: 1024,
+                        default_value: 1024,
+                        direction: 'max',
+                        is_enabled: true,
+                    },
+                    tablet_extra: {
+                        label: 'Tablet Extra',
+                        value: 1200,
+                        default_value: 1200,
+                        direction: 'max',
+                        is_enabled: true,
+                    },
+                    laptop: {
+                        label: 'Laptop',
+                        value: 1366,
+                        default_value: 1366,
+                        direction: 'max',
+                        is_enabled: true,
+                    },
+                    widescreen: {
+                        label: 'Widescreen',
+                        value: 2400,
+                        default_value: 2400,
+                        direction: 'min',
+                        is_enabled: false,
+                    },
+                },
+            },
+            version: '3.7.6',
+            is_static: false,
+            experimentalFeatures: {
+                e_dom_optimization: true,
+                e_optimized_assets_loading: true,
+                a11y_improvements: true,
+                additional_custom_breakpoints: true,
+                e_import_export: true,
+                e_hidden_wordpress_widgets: true,
+                'landing-pages': true,
+                'elements-color-picker': true,
+                'favorite-widgets': true,
+                'admin-top-bar': true,
+            },
+            urls: {
+                assets:
+                    'https:\/\/demo2.pavothemes.com\/onilife\/wp-content\/plugins\/elementor\/assets\/',
+            },
+            settings: { page: [], editorPreferences: [] },
+            kit: {
+                active_breakpoints: [
+                    'viewport_mobile',
+                    'viewport_mobile_extra',
+                    'viewport_tablet',
+                    'viewport_tablet_extra',
+                    'viewport_laptop',
+                ],
+                global_image_lightbox: 'yes',
+                lightbox_enable_counter: 'yes',
+                lightbox_enable_fullscreen: 'yes',
+                lightbox_enable_zoom: 'yes',
+                lightbox_enable_share: 'yes',
+                lightbox_title_src: 'title',
+                lightbox_description_src: 'description',
+            },
+            post: {
+                id: 290,
+                title: 'Onilife%20%E2%80%93%20Senior%20Living%20WordPress%20Theme',
+                excerpt: '',
+                featuredImage: false,
+            },
+        };
+    </script>
+    <script src="{% static 'plugins/elementor/assets/js/frontend.min87e3.js?ver=3.7.6' %}"
+        id="elementor-frontend-js"></script>
+    <script src="{% static 'assets/js/elementor/video8a54.js?ver=1.0.0' %}"
+        id="onilife-elementor-video-js"></script>
+    <script src="{% static 'assets/js/vendor/jquery.magnific-popup.min8a54.js?ver=1.0.0' %}"
+        id="magnific-popup-js"></script>
+    <script src="{% static 'assets/js/elementor/tabs8a54.js?ver=1.0.0' %}"
+        id="onilife-elementor-tabs-js"></script>
+    <script src="{% static 'plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min3958.js?ver=0.2.1' %}"
+        id="jquery-numerator-js"></script>
+    <script src="{% static 'assets/js/elementor/living8a54.js?ver=1.0.0' %}"
+        id="onilife-elementor-living-js"></script>
+    <script src="{% static 'assets/js/vendor/slick.min8a54.js?ver=1.0.0' %}" id="slick-js"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min8a54.js?ver=1.0.0' %}" id="isotope-js"></script>
+    <script src="{% static 'js/imagesloaded.mineda1.js?ver=4.1.4' %}" id="imagesloaded-js"></script>
+    <script src="{% static 'assets/js/elementor/testimonial8a54.js?ver=1.0.0' %}"
+        id="onilife-elementor-testimonial-js"></script>
+    <script src="{% static 'assets/js/elementor/posts-grid8a54.js?ver=1.0.0' %}"
+        id="onilife-elementor-posts-grid-js"></script>
+    <script src="{% static 'assets/js/elementor/image-gallery8a54.js?ver=1.0.0' %}"
+        id="onilife-elementor-image-gallery-js"></script>
+    <script defer src="{% static 'plugins/mailchimp-for-wp/assets/js/forms5111.js?ver=4.8.10' %}"
+        id="mc4wp-forms-api-js"></script>
+    <script src="{% static 'assets/js/elementor-frontend8a54.js?ver=1.0.0' %}"
+        id="onilife-elementor-frontend-js"></script>
+    <script src="{% static 'assets/js/vendor/jquery.sticky8a54.js?ver=1.0.0' %}"
+        id="elementor-sticky-js"></script>
+    <script src="{% static 'assets/js/vendor/sticky8a54.js?ver=1.0.0' %}"
+        id="onilife-elementor-sticky-js"></script>
