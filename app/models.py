@@ -45,7 +45,6 @@ class LivingOptions(models.Model):
          )
       ],
    )
-   category = models.ForeignKey(LivingOptionsCategory, on_delete=models.CASCADE)
    date_posted = models.DateTimeField(auto_now_add=True)
    last_updated = models.DateField(auto_now=True)
    slug = AutoSlugField(unique=True, populate_from='title', sep='-', null=True)

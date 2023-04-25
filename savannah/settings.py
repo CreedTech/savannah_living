@@ -1,13 +1,15 @@
 from pathlib import Path
+import dj_database_url
+from decouple import Csv, config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = "django-insecure-s98tw3f11zq5uzjx*@6o73=3+x87b4^wwup0(3@nw7io-)my61"
+SECRET_KEY = config("SECRET_KEY", default="MY SECRET KEY!!!")
 
-DEBUG = True
+DEBUG = config("DEGUB", default=True, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())
 
 
 
@@ -46,6 +48,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "app.context_processors.options_renderer",
             ],
         },
     },
@@ -61,6 +64,25 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# if config("MODE") == "dev":
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.postgresql_psycopg2",
+#             "NAME": config("DB_NAME"),
+#             "USER": config("DB_USER"),
+#             "PASSWORD": config("DB_PASSWORD"),
+#             "HOST": config("DB_HOST"),
+#             "PORT": "",
+#         }
+#     }
+# # production
+# else:
+#     DATABASES = {"default": dj_database_url.config(
+#         default=config("DATABASE_URL"))}
+
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES["default"].update(db_from_env)
 
 
 

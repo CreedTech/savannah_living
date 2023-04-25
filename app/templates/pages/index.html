@@ -1076,6 +1076,9 @@ Home
                                                             data-elementor-columns-laptop="2"
                                                             data-elementor-columns-tablet="2"
                                                             data-elementor-columns-mobile="1">
+                                                            {% if living_options %}
+                                                            {% for option in living_options %}
+                                                              
                                                             <div class="column-item living-style-1">
                                                                 <article
                                                                     class="living post-1399 onilife_living type-onilife_living status-publish has-post-thumbnail hentry">
@@ -1083,7 +1086,7 @@ Home
                                                                         <div class="living-post-thumbnail">
                                                                             <img loading="lazy" width="820"
                                                                                 height="464"
-                                                                                src="{% static 'uploads/2022/09/living-1-990x560.jpg' %}"
+                                                                                src="{{option.image.url}}"
                                                                                 class="attachment-onilife-living-grid size-onilife-living-grid wp-post-image"
                                                                                 alt=""  />
                                                                         </div>
@@ -1092,16 +1095,15 @@ Home
                                                                             <div class="content-top">
                                                                                 <h4 class="entry-title">
                                                                                     <a
-                                                                                        href="living/respite-care/index.html">Respite
-                                                                                        Care</a>
+                                                                                        href="{% url 'living' option.slug %}">{{option.title}}</a>
                                                                                 </h4>
                                                                                 <div class="description">
-                                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste quis ut dolor sapiente. Maxime ipsa adipisci facere molestias quam!
+                                                                                    {{option.description}}
                                                                                 </div>
                                                                             </div>
                                                                             <div class="living-button">
                                                                                 <a class="button-more-link"
-                                                                                    href="living/respite-care/index.html">
+                                                                                    href="{% url 'living' option.slug %}">
                                                                                     <span>learn more</span><i
                                                                                         class="onilife-icon-chevron-circle-right"></i>
                                                                                 </a>
@@ -1110,105 +1112,11 @@ Home
                                                                     </div>
                                                                 </article>
                                                             </div>
-                                                            <div class="column-item living-style-1">
-                                                                <article
-                                                                    class="living post-1398 onilife_living type-onilife_living status-publish has-post-thumbnail hentry">
-                                                                    <div class="living-inner">
-                                                                        <div class="living-post-thumbnail">
-                                                                            <img width="820" height="464"
-                                                                                src="{% static 'uploads/2022/09/living-2-990x560.jpg' %}"
-                                                                                class="attachment-onilife-living-grid size-onilife-living-grid wp-post-image"
-                                                                                alt="" loading="lazy" sizes="(max-width: 820px) 100vw, 820px" />
-                                                                        </div>
-                                                                        <div class="living-content"
-                                                                            style="background-color: #9498bb">
-                                                                            <div class="content-top">
-                                                                                <h4 class="entry-title">
-                                                                                    <a
-                                                                                        href="living/memory-care/index.html">Memory
-                                                                                        Care</a>
-                                                                                </h4>
-                                                                                <div class="description">
-                                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste quis ut dolor sapiente. Maxime ipsa adipisci facere molestias quam!
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="living-button">
-                                                                                <a class="button-more-link"
-                                                                                    href="living/memory-care/index.html">
-                                                                                    <span>learn more</span><i
-                                                                                        class="onilife-icon-chevron-circle-right"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </article>
-                                                            </div>
-                                                            <div class="column-item living-style-1">
-                                                                <article
-                                                                    class="living post-1397 onilife_living type-onilife_living status-publish has-post-thumbnail hentry">
-                                                                    <div class="living-inner">
-                                                                        <div class="living-post-thumbnail">
-                                                                            <img width="820" height="464"
-                                                                                src="{% static 'uploads/2022/09/living-3-990x560.jpg' %}"
-                                                                                class="attachment-onilife-living-grid size-onilife-living-grid wp-post-image"
-                                                                                alt="" loading="lazy"  sizes="(max-width: 820px) 100vw, 820px" />
-                                                                        </div>
-                                                                        <div class="living-content"
-                                                                            style="background-color: #90b4ab">
-                                                                            <div class="content-top">
-                                                                                <h4 class="entry-title">
-                                                                                    <a
-                                                                                        href="living/assisted-living/index.html">Assisted
-                                                                                        Living</a>
-                                                                                </h4>
-                                                                                <div class="description">
-                                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste quis ut dolor sapiente. Maxime ipsa adipisci facere molestias quam!
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="living-button">
-                                                                                <a class="button-more-link"
-                                                                                    href="living/assisted-living/index.html">
-                                                                                    <span>learn more</span><i
-                                                                                        class="onilife-icon-chevron-circle-right"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </article>
-                                                            </div>
-                                                            <div class="column-item living-style-1">
-                                                                <article
-                                                                    class="living post-1396 onilife_living type-onilife_living status-publish has-post-thumbnail hentry">
-                                                                    <div class="living-inner">
-                                                                        <div class="living-post-thumbnail">
-                                                                            <img width="820" height="464"
-                                                                                src="{% static 'uploads/2022/09/living-4-990x560.jpg' %}"
-                                                                                class="attachment-onilife-living-grid size-onilife-living-grid wp-post-image"
-                                                                                alt="" loading="lazy"  sizes="(max-width: 820px) 100vw, 820px" />
-                                                                        </div>
-                                                                        <div class="living-content"
-                                                                            style="background-color: #c0ae9d">
-                                                                            <div class="content-top">
-                                                                                <h4 class="entry-title">
-                                                                                    <a
-                                                                                        href="living/independent-living/index.html">Independent
-                                                                                        Living</a>
-                                                                                </h4>
-                                                                                <div class="description">
-                                                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste quis ut dolor sapiente. Maxime ipsa adipisci facere molestias quam!
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="living-button">
-                                                                                <a class="button-more-link"
-                                                                                    href="living/independent-living/index.html">
-                                                                                    <span>learn more</span><i
-                                                                                        class="onilife-icon-chevron-circle-right"></i>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </article>
-                                                            </div>
+                                                            {% endfor %}
+                                                            
+                                                            {% else %}
+                                                            <p>No Living Options</p>
+                                                            {% endif %}
                                                         </div>
                                                     </div>
                                                 </div>

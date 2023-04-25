@@ -1,0 +1,779 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  {{living_option.title}}
+{% endblock title %}
+
+{% block content %}
+<div class="breadcrumb-wrap">
+    <div data-elementor-type="wp-post" data-elementor-id="4752" class="elementor elementor-4752">
+        <section
+            class="elementor-section elementor-top-section elementor-element elementor-element-e472634 elementor-section-full_width elementor-section-height-min-height elementor-section-stretched elementor-section-height-default elementor-section-items-middle"
+            data-id="e472634" data-element_type="section"
+            data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-background-overlay"></div>
+            <div class="elementor-container elementor-column-gap-no">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-021fa3b"
+                    data-id="021fa3b" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-02ef55f elementor-widget elementor-widget-onilife-breadcrumb"
+                            data-id="02ef55f" data-element_type="widget"
+                            data-widget_type="onilife-breadcrumb.default">
+                            <div class="elementor-widget-container">
+                                <div class="breadcrumb" typeof="BreadcrumbList" vocab="">
+                                    <div class="breadcrumb-listItem">
+                                        <span property="itemListElement" typeof="ListItem"><a property="item"
+                                                typeof="WebPage" title="Go to Home."
+                                                href="{% url 'index' %}" class="home"><span
+                                                    property="name">Home</span></a>
+                                            <meta property="position" content="1">
+                                        </span><i class="onilife-icon-minus"></i><span
+                                            property="itemListElement" typeof="ListItem"><a property="item"
+                                                typeof="WebPage" title="Go to Livings." href="{% url 'index' %}"
+                                                class="archive post-onilife_living-archive"><span
+                                                    property="name">Livings</span></a>
+                                            <meta property="position" content="2">
+                                        </span><i class="onilife-icon-minus"></i><span
+                                            property="itemListElement" typeof="ListItem"><span property="name"
+                                                class="post post-onilife_living current-item">{{living_option.title}}</span>
+                                            <meta property="url" content="{% url 'index' %}">
+                                            <meta property="position" content="3">
+                                        </span>
+                                    </div>
+                                    <h1 class="onilife-title">
+                                        {{living_option.title}} </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="content" class="site-content" tabindex="-1">
+    <div class="col-full">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main">
+                <div data-elementor-type="wp-post" data-elementor-id="1399" class="elementor elementor-1399">
+                    <section
+                        class="elementor-section elementor-top-section elementor-element elementor-element-f953eba elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                        data-id="f953eba" data-element_type="section">
+                        <div class="elementor-container elementor-column-gap-no">
+                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-cb89d70"
+                                data-id="cb89d70" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <section
+                                        class="elementor-section elementor-inner-section elementor-element elementor-element-5e7ecad elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                        data-id="5e7ecad" data-element_type="section"
+                                        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-c6d76ea"
+                                                data-id="c6d76ea" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-6d20d5e elementor-widget elementor-widget-heading"
+                                                        data-id="6d20d5e" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2
+                                                                class="elementor-heading-title elementor-size-default">
+                                                                Living Options</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-29075b0 elementor-widget elementor-widget-onilife-living-list"
+                                                        data-id="29075b0" data-element_type="widget"
+                                                        data-widget_type="onilife-living-list.default">
+                                                        <div class="elementor-widget-container">
+                                                            {% if living_options %}
+                                                                {% for option in living_options %}
+                                                                {% url 'living' option.slug as living_path %}
+                                                            <ul class="elementor-living-item-wrapper">
+                                                                
+                                                                <li class="living-list  {% if request.path == living_path %} active  {% endif %}">
+                                                                    <a href="">
+                                                                        <span class="living-text">
+                                                                            <span>{{living_option.title}}</span><i
+                                                                                class="onilife-icon-chevron-circle-right"></i>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            {% endfor %}
+                                                                
+                                                                {% else %}
+                                                                <p>No Living Options</p>
+                                                                {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="elementor-element elementor-element-4ff7721 elementor-widget elementor-widget-heading"
+                                                        data-id="4ff7721" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2
+                                                                class="elementor-heading-title elementor-size-default">
+                                                                Download Our Guide</h2>
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="elementor-element elementor-element-e930411 elementor-widget elementor-widget-text-editor"
+                                                        data-id="e930411" data-element_type="widget"
+                                                        data-widget_type="text-editor.default">
+                                                        <div class="elementor-widget-container">
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, atque animi nihil incidunt excepturi eaque maiores mollitia. Ratione, nulla!</p>
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="elementor-element elementor-element-670d798 button-style-onilife-yes elementor-widget elementor-widget-button"
+                                                        data-id="670d798" data-element_type="widget"
+                                                        data-widget_type="button.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div class="elementor-button-wrapper">
+                                                                <a href="#"
+                                                                    class="elementor-button-link elementor-button elementor-size-sm"
+                                                                    role="button">
+                                                                    <span
+                                                                        class="elementor-button-content-wrapper">
+                                                                        <span
+                                                                            class="elementor-button-icon elementor-align-icon-left">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-chevron-circle-down"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-button-text">download
+                                                                            guide</span>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-ec8e34c elementor-widget elementor-widget-image"
+                                                        data-id="ec8e34c" data-element_type="widget"
+                                                        data-widget_type="image.default">
+                                                        <div class="elementor-widget-container">
+                                                            <img width="312" height="171"
+                                                                src="{% static 'uploads/2022/09/living_img1.png' %}"
+                                                                class="attachment-large size-large" alt=""
+                                                                loading="lazy"
+                                                                sizes="(max-width: 312px) 100vw, 312px" />
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section
+                                        class="elementor-section elementor-inner-section elementor-element elementor-element-5572f3b elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                        data-id="5572f3b" data-element_type="section"
+                                        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-16b6115"
+                                                data-id="16b6115" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-a577b1c elementor-widget elementor-widget-heading"
+                                                        data-id="a577b1c" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2
+                                                                class="elementor-heading-title elementor-size-default">
+                                                                How to Get Started</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-4a0661f elementor-widget__width-auto elementor-widget elementor-widget-heading"
+                                                        data-id="4a0661f" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2
+                                                                class="elementor-heading-title elementor-size-default">
+                                                                1</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-9d64a4e elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor"
+                                                        data-id="9d64a4e" data-element_type="widget"
+                                                        data-widget_type="text-editor.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div>Connect with an expert senior living advisor
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-003841a elementor-widget__width-auto elementor-widget elementor-widget-heading"
+                                                        data-id="003841a" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2
+                                                                class="elementor-heading-title elementor-size-default">
+                                                                2</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-c29536b elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor"
+                                                        data-id="c29536b" data-element_type="widget"
+                                                        data-widget_type="text-editor.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div>Review a personalized list of communities</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-49e6df1 elementor-widget__width-auto elementor-widget elementor-widget-heading"
+                                                        data-id="49e6df1" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2
+                                                                class="elementor-heading-title elementor-size-default">
+                                                                3</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-3348a37 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor"
+                                                        data-id="3348a37" data-element_type="widget"
+                                                        data-widget_type="text-editor.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div>Tour and decide with confidence</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-78e6dc0"
+                                data-id="78e6dc0" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-element-4ec8bc0 elementor-widget elementor-widget-heading"
+                                        data-id="4ec8bc0" data-element_type="widget"
+                                        data-widget_type="heading.default">
+                                        <div class="elementor-widget-container">
+                                            <h2 class="elementor-heading-title elementor-size-default">Lorem ipsum dolor sit amet.</h2>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-eede95b elementor-widget elementor-widget-text-editor"
+                                        data-id="eede95b" data-element_type="widget"
+                                        data-widget_type="text-editor.default">
+                                        <div class="elementor-widget-container">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus architecto saepe provident sapiente eaque officia nam! Possimus quis sed ratione!</div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-4c3381d elementor-widget elementor-widget-onilife-thumbnail"
+                                        data-id="4c3381d" data-element_type="widget"
+                                        data-widget_type="onilife-thumbnail.default">
+                                        <div class="elementor-widget-container">
+                                            <img loading="lazy" width="1920" height="1280 !important" style="height:600px !important; min-height: 470px"
+                                                src="{{living_option.image.url}}"
+                                                class="attachment-full size-full wp-post-image" alt=""
+                                                sizes="(max-width: 1920px) 100vw, 1920px" />
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-cd8da0d elementor-widget elementor-widget-text-editor"
+                                        data-id="cd8da0d" data-element_type="widget"
+                                        data-widget_type="text-editor.default">
+                                        <div class="elementor-widget-container">
+                                            <p>{{living_option.description}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-e29ef2c elementor-widget elementor-widget-heading"
+                                        data-id="e29ef2c" data-element_type="widget"
+                                        data-widget_type="heading.default">
+                                        <div class="elementor-widget-container">
+                                            <h2 class="elementor-heading-title elementor-size-default">Services
+                                                & Amenities </h2>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-982b876 elementor-widget elementor-widget-text-editor"
+                                        data-id="982b876" data-element_type="widget"
+                                        data-widget_type="text-editor.default">
+                                        <div class="elementor-widget-container">
+                                            <p>Lorem ipsum dolor sit amet.</p>
+                                        </div>
+                                    </div>
+                                    <section
+                                        class="elementor-section elementor-inner-section elementor-element elementor-element-1d31412 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                        data-id="1d31412" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1d32cbd"
+                                                data-id="1d32cbd" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-100e2e2 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                        data-id="100e2e2" data-element_type="widget"
+                                                        data-widget_type="icon-list.default">
+                                                        <div class="elementor-widget-container">
+                                                            <ul class="elementor-icon-list-items">
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-hour-staff"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-icon-list-text">24-hour
+                                                                            staff</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-medication-1"></i>
+                                                                        </span>
+                                                                        <span class="elementor-icon-list-text">
+                                                                            Medication assistance</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-bathing"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-icon-list-text">Bathing
+                                                                            assistance</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-dress"></i>
+                                                                        </span>
+                                                                        <span class="elementor-icon-list-text">
+                                                                            Help getting dressed</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-emergency"></i>
+                                                                        </span>
+                                                                        <span class="elementor-icon-list-text">
+                                                                            Emergency alert system</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-transportation"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-icon-list-text">Scheduled
+                                                                            transportation</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-housekeeping"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-icon-list-text">Housekeeping
+                                                                            & linen services</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-chef-meal"></i>
+                                                                        </span>
+                                                                        <span class="elementor-icon-list-text">
+                                                                            Chef-prepared meals </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-apartment"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-icon-list-text">Apartment
+                                                                            maintenance</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-b53fc9a"
+                                                data-id="b53fc9a" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-f80cf7a elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                        data-id="f80cf7a" data-element_type="widget"
+                                                        data-widget_type="icon-list.default">
+                                                        <div class="elementor-widget-container">
+                                                            <ul class="elementor-icon-list-items">
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-private-apartments"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-icon-list-text">Private
+                                                                            apartments</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-complimentary"></i>
+                                                                        </span>
+                                                                        <span class="elementor-icon-list-text">
+                                                                            Complimentary Wi-Fi</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-engaging"></i>
+                                                                        </span>
+                                                                        <span class="elementor-icon-list-text">
+                                                                            Engaging daily events</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-salon"></i>
+                                                                        </span>
+                                                                        <span class="elementor-icon-list-text">
+                                                                            Salon and spa</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-indoor-pool"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-icon-list-text">Swimming
+                                                                            pool</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-fitness-1"></i>
+                                                                        </span>
+                                                                        <span class="elementor-icon-list-text">
+                                                                            Fitness center</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-gardening-spaces"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-icon-list-text">Gardening
+                                                                            spaces</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-movie-theater"></i>
+                                                                        </span>
+                                                                        <span class="elementor-icon-list-text">
+                                                                            Movie theater</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="elementor-icon-list-item">
+                                                                    <a href="#">
+                                                                        <span class="elementor-icon-list-icon">
+                                                                            <i aria-hidden="true"
+                                                                                class="onilife-icon- onilife-icon-parking-area"></i>
+                                                                        </span>
+                                                                        <span
+                                                                            class="elementor-icon-list-text">Parking
+                                                                            area</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <div class="elementor-element elementor-element-476d255 elementor-widget elementor-widget-heading"
+                                        data-id="476d255" data-element_type="widget"
+                                        data-widget_type="heading.default">
+                                        <div class="elementor-widget-container">
+                                            <h2 class="elementor-heading-title elementor-size-default">What you
+                                                get</h2>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-44827c6 elementor-widget elementor-widget-text-editor"
+                                        data-id="44827c6" data-element_type="widget"
+                                        data-widget_type="text-editor.default">
+                                        <div class="elementor-widget-container">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque!</p>
+                                        </div>
+                                    </div>
+                                    <section
+                                        class="elementor-section elementor-inner-section elementor-element elementor-element-f7b255e elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                        data-id="f7b255e" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d8672ad"
+                                                data-id="d8672ad" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-47c2a2d elementor-position-top onilife-image-box-style-1 elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                                                        data-id="47c2a2d" data-element_type="widget"
+                                                        data-widget_type="image-box.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div class="elementor-image-box-wrapper">
+                                                                <figure class="elementor-image-box-img"><img
+                                                                        width="820" height="360"
+                                                                        src="{% static 'uploads/2022/09/living_img01.jpg' %}"
+                                                                        class="elementor-animation-float attachment-full size-full"
+                                                                        alt="" loading="lazy" /></figure>
+                                                                <div class="elementor-image-box-content">
+                                                                    <h3 class="elementor-image-box-title">Lorem ipsum dolor sit.</h3>
+                                                                    <p class="elementor-image-box-description">
+                                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aliquam perspiciatis fugit fugiat, esse consequatur.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-839db23"
+                                                data-id="839db23" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-93cec2a elementor-position-top onilife-image-box-style-1 elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                                                        data-id="93cec2a" data-element_type="widget"
+                                                        data-widget_type="image-box.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div class="elementor-image-box-wrapper">
+                                                                <figure class="elementor-image-box-img"><img
+                                                                        width="820" height="360"
+                                                                        src="{% static 'uploads/2022/09/living_img02.jpg' %}"
+                                                                        class="elementor-animation-float attachment-full size-full"
+                                                                        alt="" loading="lazy" /></figure>
+                                                                        <div class="elementor-image-box-content">
+                                                                            <h3 class="elementor-image-box-title">Lorem ipsum dolor sit.</h3>
+                                                                            <p class="elementor-image-box-description">
+                                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aliquam perspiciatis fugit fugiat, esse consequatur.</p>
+                                                                        </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section
+                                        class="elementor-section elementor-inner-section elementor-element elementor-element-eec1c3f elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                        data-id="eec1c3f" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-e776373"
+                                                data-id="e776373" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-cfaf0f8 elementor-position-top onilife-image-box-style-1 elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                                                        data-id="cfaf0f8" data-element_type="widget"
+                                                        data-widget_type="image-box.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div class="elementor-image-box-wrapper">
+                                                                <figure class="elementor-image-box-img"><img
+                                                                        width="820" height="360"
+                                                                        src="{% static 'uploads/2022/09/living_05.jpg' %}"
+                                                                        class="elementor-animation-float attachment-full size-full"
+                                                                        alt="" loading="lazy" /></figure>
+                                                                        <div class="elementor-image-box-content">
+                                                                            <h3 class="elementor-image-box-title">Lorem ipsum dolor sit.</h3>
+                                                                            <p class="elementor-image-box-description">
+                                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aliquam perspiciatis fugit fugiat, esse consequatur.</p>
+                                                                        </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-9c8ea8d"
+                                                data-id="9c8ea8d" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-09c5027 elementor-position-top onilife-image-box-style-1 elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                                                        data-id="09c5027" data-element_type="widget"
+                                                        data-widget_type="image-box.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div class="elementor-image-box-wrapper">
+                                                                <figure class="elementor-image-box-img"><img
+                                                                        width="820" height="360"
+                                                                        src="{% static 'uploads/2022/09/living_img04.jpg' %}"
+                                                                        class="elementor-animation-float attachment-full size-full"
+                                                                        alt="" loading="lazy" /></figure>
+                                                                        <div class="elementor-image-box-content">
+                                                                            <h3 class="elementor-image-box-title">Lorem ipsum dolor sit.</h3>
+                                                                            <p class="elementor-image-box-description">
+                                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aliquam perspiciatis fugit fugiat, esse consequatur.</p>
+                                                                        </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            l                           </div>
+                                    </section>
+                                    <div class="elementor-element elementor-element-73f3a7c elementor-widget elementor-widget-heading"
+                                        data-id="73f3a7c" data-element_type="widget"
+                                        data-widget_type="heading.default">
+                                        <div class="elementor-widget-container">
+                                            <h2 class="elementor-heading-title elementor-size-default">
+                                                Frequently asked questions</h2>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-c461797 style-theme-onilife-yes elementor-widget elementor-widget-accordion"
+                                        data-id="c461797" data-element_type="widget"
+                                        data-widget_type="accordion.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-accordion" role="tablist">
+                                                <div class="elementor-accordion-item">
+                                                    <div id="elementor-tab-title-2051"
+                                                        class="elementor-tab-title" data-tab="1" role="tab"
+                                                        aria-controls="elementor-tab-content-2051"
+                                                        aria-expanded="false">
+                                                        <span
+                                                            class="elementor-accordion-icon elementor-accordion-icon-left"
+                                                            aria-hidden="true">
+                                                            <span class="elementor-accordion-icon-closed"><i
+                                                                    class="onilife-icon- onilife-icon-plus"></i></span>
+                                                            <span class="elementor-accordion-icon-opened"><i
+                                                                    class="onilife-icon- onilife-icon-minus"></i></span>
+                                                        </span>
+                                                        <a class="elementor-accordion-title" href="#">Lorem ipsum dolor sit amet consectetur.?</a>
+                                                    </div>
+                                                    <div id="elementor-tab-content-2051"
+                                                        class="elementor-tab-content elementor-clearfix"
+                                                        data-tab="1" role="tabpanel"
+                                                        aria-labelledby="elementor-tab-title-2051">
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi culpa eveniet tempore ut, beatae numquam dolorem. Quae beatae deleniti sed voluptatem dicta ab expedita dolor? Praesentium exercitationem vitae officiis quasi, ab omnis recusandae similique veniam rerum dolor reiciendis, esse sint?</p>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-accordion-item">
+                                                    <div id="elementor-tab-title-2052"
+                                                        class="elementor-tab-title" data-tab="2" role="tab"
+                                                        aria-controls="elementor-tab-content-2052"
+                                                        aria-expanded="false">
+                                                        <span
+                                                            class="elementor-accordion-icon elementor-accordion-icon-left"
+                                                            aria-hidden="true">
+                                                            <span class="elementor-accordion-icon-closed"><i
+                                                                    class="onilife-icon- onilife-icon-plus"></i></span>
+                                                            <span class="elementor-accordion-icon-opened"><i
+                                                                    class="onilife-icon- onilife-icon-minus"></i></span>
+                                                        </span>
+                                                        <a class="elementor-accordion-title" href="#">Lorem ipsum dolor sit amet consectetur.? </a>
+                                                    </div>
+                                                    <div id="elementor-tab-content-2052"
+                                                        class="elementor-tab-content elementor-clearfix"
+                                                        data-tab="2" role="tabpanel"
+                                                        aria-labelledby="elementor-tab-title-2052">
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi culpa eveniet tempore ut, beatae numquam dolorem. Quae beatae deleniti sed voluptatem dicta ab expedita dolor? Praesentium exercitationem vitae officiis quasi, ab omnis recusandae similique veniam rerum dolor reiciendis, esse sint?</p>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-accordion-item">
+                                                    <div id="elementor-tab-title-2053"
+                                                        class="elementor-tab-title" data-tab="3" role="tab"
+                                                        aria-controls="elementor-tab-content-2053"
+                                                        aria-expanded="false">
+                                                        <span
+                                                            class="elementor-accordion-icon elementor-accordion-icon-left"
+                                                            aria-hidden="true">
+                                                            <span class="elementor-accordion-icon-closed"><i
+                                                                    class="onilife-icon- onilife-icon-plus"></i></span>
+                                                            <span class="elementor-accordion-icon-opened"><i
+                                                                    class="onilife-icon- onilife-icon-minus"></i></span>
+                                                        </span>
+                                                        <a class="elementor-accordion-title" href="#">Lorem ipsum dolor sit amet consectetur.?</a>
+                                                    </div>
+                                                    <div id="elementor-tab-content-2053"
+                                                        class="elementor-tab-content elementor-clearfix"
+                                                        data-tab="3" role="tabpanel"
+                                                        aria-labelledby="elementor-tab-title-2053">
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi culpa eveniet tempore ut, beatae numquam dolorem. Quae beatae deleniti sed voluptatem dicta ab expedita dolor? Praesentium exercitationem vitae officiis quasi, ab omnis recusandae similique veniam rerum dolor reiciendis, esse sint?</p>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-accordion-item">
+                                                    <div id="elementor-tab-title-2054"
+                                                        class="elementor-tab-title" data-tab="4" role="tab"
+                                                        aria-controls="elementor-tab-content-2054"
+                                                        aria-expanded="false">
+                                                        <span
+                                                            class="elementor-accordion-icon elementor-accordion-icon-left"
+                                                            aria-hidden="true">
+                                                            <span class="elementor-accordion-icon-closed"><i
+                                                                    class="onilife-icon- onilife-icon-plus"></i></span>
+                                                            <span class="elementor-accordion-icon-opened"><i
+                                                                    class="onilife-icon- onilife-icon-minus"></i></span>
+                                                        </span>
+                                                        <a class="elementor-accordion-title" href="#">Lorem ipsum dolor sit amet consectetur.?</a>
+                                                    </div>
+                                                    <div id="elementor-tab-content-2054"
+                                                        class="elementor-tab-content elementor-clearfix"
+                                                        data-tab="4" role="tabpanel"
+                                                        aria-labelledby="elementor-tab-title-2054">
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi culpa eveniet tempore ut, beatae numquam dolorem. Quae beatae deleniti sed voluptatem dicta ab expedita dolor? Praesentium exercitationem vitae officiis quasi, ab omnis recusandae similique veniam rerum dolor reiciendis, esse sint?</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section
+                        class="elementor-section elementor-top-section elementor-element elementor-element-1bea367 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                        data-id="1bea367" data-element_type="section"
+                        data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+                        <div class="elementor-background-overlay"></div>
+                        <div class="elementor-container elementor-column-gap-no">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-99de07d"
+                                data-id="99de07d" data-element_type="column"
+                                data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-element-3b171f7 elementor-widget elementor-widget-heading"
+                                        data-id="3b171f7" data-element_type="widget"
+                                        data-widget_type="heading.default">
+                                        <div class="elementor-widget-container">
+                                            <h2 class="elementor-heading-title elementor-size-default">Find a
+                                                community near you<br>
+                                                that perfectly fits your needs</h2>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-ede9c69 elementor-align-center button-style-onilife-yes elementor-widget elementor-widget-button"
+                                        data-id="ede9c69" data-element_type="widget"
+                                        data-widget_type="button.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-button-wrapper">
+                                                <a href="{% url 'communities' %}"
+                                                    class="elementor-button-link elementor-button elementor-size-sm"
+                                                    role="button">
+                                                    <span class="elementor-button-content-wrapper">
+                                                        <span
+                                                            class="elementor-button-icon elementor-align-icon-right">
+                                                            <i aria-hidden="true"
+                                                                class="onilife-icon- onilife-icon-chevron-circle-right"></i>
+                                                        </span>
+                                                        <span class="elementor-button-text">view all
+                                                            communities</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+{% endblock content %}
