@@ -100,6 +100,8 @@
                                                         <div class="row" data-elementor-columns="1"
                                                             data-elementor-columns-tablet="2"
                                                             data-elementor-columns-mobile="1">
+                                                            {% if houses %}
+                                                              {% for house in houses %}
                                                             <div class="column-item communities-style-3">
                                                                 <article
                                                                     class="communities post-3601 onilife_communities type-onilife_communities status-publish has-post-thumbnail hentry onilife_communities_cat-assisted-living onilife_communities_cat-memory-care onilife_communities_cat-respite-care">
@@ -107,7 +109,7 @@
                                                                         <div class="communities-post-thumbnail">
                                                                             <img loading="lazy" width="820"
                                                                                 height="546"
-                                                                                src="{% static 'uploads/2022/09/communities-5.jpg' %}"
+                                                                                src="{{house.image.url}}"
                                                                                 class="attachment-onilife-communities-grid size-onilife-communities-grid wp-post-image"
                                                                                 alt=""
                                                                                 sizes="(max-width: 820px) 100vw, 820px" />
@@ -116,36 +118,37 @@
                                                                             <div class="left">
                                                                                 <div class="top">
                                                                                     <h4 class="entry-title"><a
-                                                                                            href="../communities/overlook-village/index.html">Lorem, ipsum.</a></h4>
+                                                                                            href="{% url 'community' house.slug %}">{{house.name}}</a></h4>
                                                                                     <div class="address">
-                                                                                        65, Lorem ipsum dolor sit amet consectetur.
+                                                                                        {{house.address}}
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="phone">
-                                                                                    +234-91-371-04825 </div>
+                                                                                    +{{house.phone_number}} </div>
                                                                             </div>
                                                                             <div class="right">
                                                                                 <div class="living-options">
                                                                                     <div class="title">
                                                                                         Living Options: </div>
                                                                                     <div class="content">
+                                                                                        
+                                                                                        
+                                                                                          {% for category in house.categories.all %}
+                                                                                        
+                                                                                        
                                                                                         <a
-                                                                                            href="../living/assisted-living/index.html"><span>Lorem, ipsum.</span><span
+                                                                                            href="../living/assisted-living/index.html"><span>{{ category.name }}</span><span
                                                                                                 class="line">,
                                                                                             </span></a>
-                                                                                        <a
-                                                                                            href="../living/memory-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                        <a
-                                                                                            href="../living/respite-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
+                                                                                            {% empty %}
+                                                                                            <p>No Categories found</p>
+                                                                                            {% endfor %}
+                                                                                        
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="communities-button">
                                                                                     <a class="button-more-link button"
-                                                                                        href="">
+                                                                                        href="{% url 'community' house.slug %}">
                                                                                         <span>learn
                                                                                             more</span><i
                                                                                             class="onilife-icon-chevron-circle-right"></i>
@@ -156,230 +159,10 @@
                                                                     </div>
                                                                 </article>
                                                             </div>
-                                                            <div class="column-item communities-style-3">
-                                                                <article
-                                                                    class="communities post-3601 onilife_communities type-onilife_communities status-publish has-post-thumbnail hentry onilife_communities_cat-assisted-living onilife_communities_cat-memory-care onilife_communities_cat-respite-care">
-                                                                    <div class="communities-inner">
-                                                                        <div class="communities-post-thumbnail">
-                                                                            <img loading="lazy" width="820"
-                                                                                height="546"
-                                                                                src="{% static 'uploads/2022/09/communities-5.jpg' %}"
-                                                                                class="attachment-onilife-communities-grid size-onilife-communities-grid wp-post-image"
-                                                                                alt=""
-                                                                                sizes="(max-width: 820px) 100vw, 820px" />
-                                                                        </div>
-                                                                        <div class="communities-content">
-                                                                            <div class="left">
-                                                                                <div class="top">
-                                                                                    <h4 class="entry-title"><a
-                                                                                            href="../communities/overlook-village/index.html">Lorem, ipsum.</a></h4>
-                                                                                    <div class="address">
-                                                                                        65, Lorem ipsum dolor sit amet consectetur.
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="phone">
-                                                                                    +234-91-371-04825 </div>
-                                                                            </div>
-                                                                            <div class="right">
-                                                                                <div class="living-options">
-                                                                                    <div class="title">
-                                                                                        Living Options: </div>
-                                                                                    <div class="content">
-                                                                                        <a
-                                                                                            href="../living/assisted-living/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                        <a
-                                                                                            href="../living/memory-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                        <a
-                                                                                            href="../living/respite-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="communities-button">
-                                                                                    <a class="button-more-link button"
-                                                                                        href="">
-                                                                                        <span>learn
-                                                                                            more</span><i
-                                                                                            class="onilife-icon-chevron-circle-right"></i>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </article>
-                                                            </div>
-                                                            <div class="column-item communities-style-3">
-                                                                <article
-                                                                    class="communities post-3601 onilife_communities type-onilife_communities status-publish has-post-thumbnail hentry onilife_communities_cat-assisted-living onilife_communities_cat-memory-care onilife_communities_cat-respite-care">
-                                                                    <div class="communities-inner">
-                                                                        <div class="communities-post-thumbnail">
-                                                                            <img loading="lazy" width="820"
-                                                                                height="546"
-                                                                                src="{% static 'uploads/2022/09/communities-5.jpg' %}"
-                                                                                class="attachment-onilife-communities-grid size-onilife-communities-grid wp-post-image"
-                                                                                alt=""
-                                                                                sizes="(max-width: 820px) 100vw, 820px" />
-                                                                        </div>
-                                                                        <div class="communities-content">
-                                                                            <div class="left">
-                                                                                <div class="top">
-                                                                                    <h4 class="entry-title"><a
-                                                                                            href="../communities/overlook-village/index.html">Lorem, ipsum.</a></h4>
-                                                                                    <div class="address">
-                                                                                        65, Lorem ipsum dolor sit amet consectetur.
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="phone">
-                                                                                    +234-91-371-04825 </div>
-                                                                            </div>
-                                                                            <div class="right">
-                                                                                <div class="living-options">
-                                                                                    <div class="title">
-                                                                                        Living Options: </div>
-                                                                                    <div class="content">
-                                                                                        <a
-                                                                                            href="../living/assisted-living/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                        <a
-                                                                                            href="../living/memory-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                        <a
-                                                                                            href="../living/respite-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="communities-button">
-                                                                                    <a class="button-more-link button"
-                                                                                        href="">
-                                                                                        <span>learn
-                                                                                            more</span><i
-                                                                                            class="onilife-icon-chevron-circle-right"></i>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </article>
-                                                            </div>
-                                                            <div class="column-item communities-style-3">
-                                                                <article
-                                                                    class="communities post-3601 onilife_communities type-onilife_communities status-publish has-post-thumbnail hentry onilife_communities_cat-assisted-living onilife_communities_cat-memory-care onilife_communities_cat-respite-care">
-                                                                    <div class="communities-inner">
-                                                                        <div class="communities-post-thumbnail">
-                                                                            <img loading="lazy" width="820"
-                                                                                height="546"
-                                                                                src="{% static 'uploads/2022/09/communities-5.jpg' %}"
-                                                                                class="attachment-onilife-communities-grid size-onilife-communities-grid wp-post-image"
-                                                                                alt=""
-                                                                                sizes="(max-width: 820px) 100vw, 820px" />
-                                                                        </div>
-                                                                        <div class="communities-content">
-                                                                            <div class="left">
-                                                                                <div class="top">
-                                                                                    <h4 class="entry-title"><a
-                                                                                            href="../communities/overlook-village/index.html">Lorem, ipsum.</a></h4>
-                                                                                    <div class="address">
-                                                                                        65, Lorem ipsum dolor sit amet consectetur.
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="phone">
-                                                                                    +234-91-371-04825 </div>
-                                                                            </div>
-                                                                            <div class="right">
-                                                                                <div class="living-options">
-                                                                                    <div class="title">
-                                                                                        Living Options: </div>
-                                                                                    <div class="content">
-                                                                                        <a
-                                                                                            href="../living/assisted-living/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                        <a
-                                                                                            href="../living/memory-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                        <a
-                                                                                            href="../living/respite-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="communities-button">
-                                                                                    <a class="button-more-link button"
-                                                                                        href="">
-                                                                                        <span>learn
-                                                                                            more</span><i
-                                                                                            class="onilife-icon-chevron-circle-right"></i>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </article>
-                                                            </div>
-                                                            <div class="column-item communities-style-3">
-                                                                <article
-                                                                    class="communities post-3601 onilife_communities type-onilife_communities status-publish has-post-thumbnail hentry onilife_communities_cat-assisted-living onilife_communities_cat-memory-care onilife_communities_cat-respite-care">
-                                                                    <div class="communities-inner">
-                                                                        <div class="communities-post-thumbnail">
-                                                                            <img loading="lazy" width="820"
-                                                                                height="546"
-                                                                                src="{% static 'uploads/2022/09/communities-5.jpg' %}"
-                                                                                class="attachment-onilife-communities-grid size-onilife-communities-grid wp-post-image"
-                                                                                alt=""
-                                                                                sizes="(max-width: 820px) 100vw, 820px" />
-                                                                        </div>
-                                                                        <div class="communities-content">
-                                                                            <div class="left">
-                                                                                <div class="top">
-                                                                                    <h4 class="entry-title"><a
-                                                                                            href="../communities/overlook-village/index.html">Lorem, ipsum.</a></h4>
-                                                                                    <div class="address">
-                                                                                        65, Lorem ipsum dolor sit amet consectetur.
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="phone">
-                                                                                    +234-91-371-04825 </div>
-                                                                            </div>
-                                                                            <div class="right">
-                                                                                <div class="living-options">
-                                                                                    <div class="title">
-                                                                                        Living Options: </div>
-                                                                                    <div class="content">
-                                                                                        <a
-                                                                                            href="../living/assisted-living/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                        <a
-                                                                                            href="../living/memory-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                        <a
-                                                                                            href="../living/respite-care/index.html"><span>Lorem, ipsum.</span><span
-                                                                                                class="line">,
-                                                                                            </span></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="communities-button">
-                                                                                    <a class="button-more-link button"
-                                                                                        href="">
-                                                                                        <span>learn
-                                                                                            more</span><i
-                                                                                            class="onilife-icon-chevron-circle-right"></i>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </article>
-                                                            </div>
+                                                            {% endfor %}
+                                                            {% else %}
+                                                            <p>No Communities Available</p>
+                                                            {% endif %}
                                                             
                                                         </div>
                                                     </div>

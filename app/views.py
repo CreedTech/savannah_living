@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 
-from app.models import LivingOptions
+from app.models import House, LivingOptions
 from django.views import View
 
 # Create your views here.
@@ -61,8 +61,15 @@ def single_living_option(request,slug):
 
 def communities(request):
     template_name = 'pages/communities.html'
-    return render(request,template_name)
+    try:
+      houses = House.objects.all().order_by('-date_posted')
 
+    except House.DoesNotExist:
+      return redirect('error_page')   
+    context = {
+      'houses': houses,
+    }
+    return render(request,template_name,context)
 def single_community(request,slug):
     template_name = 'pages/single_community.html'
     return render(request,template_name)
