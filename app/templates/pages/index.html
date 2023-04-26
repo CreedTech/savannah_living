@@ -5,11 +5,10 @@ Home
 {% endblock title %}
 
 {% block content %}
-<div class="breadcrumb-wrap"></div>
-<div id="content" class="site-content" tabindex="-1">
+<div id="content" class="site-content" tabindex="-1" style="margin-top: 0px !important;">
     <div class="col-full">
         <div id="primary">
-            <main id="main" class="site-main">
+            <main id="main" class="site-main" >
                 <article id="post-290" class="post-290 page type-page status-publish hentry">
                     <div class="entry-content">
                         <div data-elementor-type="wp-page" data-elementor-id="290"
@@ -49,7 +48,7 @@ Home
                                                 data-widget_type="button.default">
                                                 <div class="elementor-widget-container">
                                                     <div class="elementor-button-wrapper">
-                                                        <a href="our-communities/index.html"
+                                                        <a href="{% url 'communities' %}"
                                                             class="elementor-button-link elementor-button elementor-size-sm"
                                                             role="button">
                                                             <span class="elementor-button-content-wrapper">
@@ -103,7 +102,7 @@ Home
                                                 data-widget_type="button.default">
                                                 <div class="elementor-widget-container">
                                                     <div class="elementor-button-wrapper">
-                                                        <a href="services-amennities/index.html"
+                                                        <a href=""
                                                             class="elementor-button-link elementor-button elementor-size-sm"
                                                             role="button">
                                                             <span class="elementor-button-content-wrapper">
@@ -1256,7 +1255,7 @@ Home
                                                                 <div class="elementor-widget-container">
                                                                     <h2
                                                                         class="elementor-heading-title elementor-size-default">
-                                                                        Find a community near you
+                                                                        Find a community
                                                                     </h2>
                                                                 </div>
                                                             </div>
@@ -1272,7 +1271,7 @@ Home
                                                                 data-widget_type="button.default">
                                                                 <div class="elementor-widget-container">
                                                                     <div class="elementor-button-wrapper">
-                                                                        <a href="our-communities/index.html"
+                                                                        <a href="{% url 'communities' %}"
                                                                             class="elementor-button-link elementor-button elementor-size-sm"
                                                                             role="button">
                                                                             <span

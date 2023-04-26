@@ -87,8 +87,8 @@
                                                                 {% url 'living' option.slug as living_path %}
                                                             <ul class="elementor-living-item-wrapper">
                                                                 
-                                                                <li class="living-list  {% if request.path == living_path %} active  {% endif %}">
-                                                                    <a href="">
+                                                                <li class="living-list {% if request.path == living_path %} active  {% endif %}">
+                                                                    <a href="{% url 'living' option.slug %}">
                                                                         <span class="living-text">
                                                                             <span>{{option.title}}</span><i
                                                                                 class="onilife-icon-chevron-circle-right"></i>
@@ -192,8 +192,8 @@
                                     <div class="elementor-element elementor-element-eede95b elementor-widget elementor-widget-text-editor"
                                         data-id="eede95b" data-element_type="widget"
                                         data-widget_type="text-editor.default">
-                                        <!-- <div class="elementor-widget-container">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus architecto saepe provident sapiente eaque officia nam! Possimus quis sed ratione!</div> -->
+                                        <div class="elementor-widget-container">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus architecto saepe provident sapiente eaque officia nam! Possimus quis sed ratione!</div>
                                     </div>
                                     <div class="elementor-element elementor-element-4c3381d elementor-widget elementor-widget-onilife-thumbnail"
                                         data-id="4c3381d" data-element_type="widget"

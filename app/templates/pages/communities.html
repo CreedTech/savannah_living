@@ -137,7 +137,7 @@
                                                                                         
                                                                                         
                                                                                         <a
-                                                                                            href="../living/assisted-living/index.html"><span>{{ category.name }}</span><span
+                                                                                            href="{% url 'living' category.name.slug %}"><span>{{ category.name }}</span><span
                                                                                                 class="line">,
                                                                                             </span></a>
                                                                                             {% empty %}
