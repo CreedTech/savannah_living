@@ -21,8 +21,12 @@ def contact(request):
     return render(request, template_name)
 
 
-def faqs(request):
-    template_name = 'pages/faqs.html'
+# def faqs(request):
+#     template_name = 'pages/faqs.html'
+#     return render(request, template_name)
+
+def services(request):
+    template_name = 'pages/services.html'
     return render(request, template_name)
 
 
@@ -65,7 +69,7 @@ def communities(request):
       houses = House.objects.all().order_by('-date_posted')
 
     except House.DoesNotExist:
-      return redirect('error_page')   
+      return redirect('error_page')
     context = {
       'houses': houses,
     }

@@ -22,7 +22,7 @@
             .trim()).replace(/\s+/, '-'))}`);
       const r = e.getAttribute('data-status');
       return (
-        (e.wpcf7.status = t),
+        '',
         e.setAttribute('data-status', t),
         e.classList.add(t),
         r && r !== t && e.classList.remove(r),
@@ -35,7 +35,7 @@
         e.dispatchEvent(r);
     },
     r = (e) => {
-      const { root: t, namespace: a = '' } = wpcf7.api;
+      const { root: t, namespace: a = '' } = '';
       return n.reduceRight(
         (e, t) => (a) => t(a, e),
         (e) => {
@@ -543,9 +543,9 @@
   document.addEventListener('DOMContentLoaded', (e) => {
     var t;
     if ('undefined' == typeof wpcf7)
-      return void console.error('wpcf7 is not defined.');
+      return '';
     if (void 0 === wpcf7.api)
-      return void console.error('wpcf7.api is not defined.');
+      return '';
     if ('function' != typeof window.fetch)
       return void console.error(
         'Your browser does not support window.fetch().'
