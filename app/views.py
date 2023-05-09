@@ -35,7 +35,7 @@ def careers(request):
       careers = Career.objects.all().order_by('-date_posted')
 
     except Career.DoesNotExist:
-      return redirect('error_page')   
+      return redirect('handler404')   
     context = {
       'careers': careers,
     }
@@ -46,7 +46,7 @@ def career_detail_view(request,slug):
     try:
         career = Career.objects.get(slug=slug)
     except Career.DoesNotExist:
-        return redirect('error_page')
+        return redirect('handler404')
     context = {
         'career': career
     }
@@ -58,7 +58,7 @@ def living_options(request):
       living_options = LivingOptions.objects.all().order_by('-date_posted')
 
     except LivingOptions.DoesNotExist:
-      return redirect('error_page')   
+      return redirect('handler404')   
     context = {
       'living_options': living_options,
     }
@@ -79,7 +79,7 @@ def single_living_option(request,slug):
     try:
         living_option = LivingOptions.objects.get(slug=slug)
     except LivingOptions.DoesNotExist:
-        return redirect('error_page')
+        return redirect('handler404')
     context = {
         'living_option': living_option
     }
@@ -91,7 +91,7 @@ def communities(request):
       houses = House.objects.all().order_by('-date_posted')
 
     except House.DoesNotExist:
-      return redirect('error_page')
+      return redirect('handler404')
     context = {
       'houses': houses,
     }
@@ -101,7 +101,7 @@ def single_community(request,slug):
     try:
         house = House.objects.get(slug=slug)
     except House.DoesNotExist:
-        return redirect('error_page')
+        return redirect('handler404')
     context = {
         'house': house
     }
@@ -111,6 +111,9 @@ def schedule_visit(request):
     template_name = 'pages/schedule_visit.html'
     return render(request,template_name)
 
-def error_page(request):
-    template_name = 'pages/404.html'
-    return render(request,template_name)
+def handler404(request,exception):
+    template_name = '404.html'
+    return render(request,template_name,status=404)
+
+def handler500(request, *args, **argv):
+    return render(request, '500.html', status=500)

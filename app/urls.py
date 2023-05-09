@@ -14,5 +14,5 @@ urlpatterns = [
     path('admission/<slug:slug>/', views.single_community, name='admission'),
     path('schedule_visit/', views.schedule_visit, name="schedule_visit"),
     path('contact/', views.contact, name="contact"),
-    path('404/', views.error_page, name='error_page')
+    path('404/', views.handler404, name='handler404')
 ]
