@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 
-from app.models import House, LivingOptions
+from app.models import House, LivingOptions,Career
 from django.views import View
 
 # Create your views here.
@@ -29,6 +29,28 @@ def services(request):
     template_name = 'pages/services.html'
     return render(request, template_name)
 
+def careers(request):
+    template_name = 'pages/careers.html'
+    try:
+      careers = Career.objects.all().order_by('-date_posted')
+
+    except Career.DoesNotExist:
+      return redirect('error_page')   
+    context = {
+      'careers': careers,
+    }
+    return render(request,template_name,context)
+
+def career_detail_view(request,slug):
+    template_name = 'pages/career_details.html'
+    try:
+        career = Career.objects.get(slug=slug)
+    except Career.DoesNotExist:
+        return redirect('error_page')
+    context = {
+        'career': career
+    }
+    return render(request,template_name,context)
 
 def living_options(request):
     template_name = 'pages/living_options.html'
@@ -76,7 +98,14 @@ def communities(request):
     return render(request,template_name,context)
 def single_community(request,slug):
     template_name = 'pages/single_community.html'
-    return render(request,template_name)
+    try:
+        house = House.objects.get(slug=slug)
+    except House.DoesNotExist:
+        return redirect('error_page')
+    context = {
+        'house': house
+    }
+    return render(request,template_name,context)
 
 def schedule_visit(request):
     template_name = 'pages/schedule_visit.html'

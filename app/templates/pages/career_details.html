@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+ {% load static %} 
+ {% block title %} 
+ {{career.title}}
+ {% endblock title %} 
+ {% block content %}
+ <div class="breadcrumb-wrap">
+    <div
+      data-elementor-type="wp-post"
+      data-elementor-id="4830"
+      class="elementor elementor-4830"
+    >
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-b5dcd67 elementor-section-full_width elementor-section-height-min-height elementor-section-stretched elementor-section-height-default elementor-section-items-middle"
+        data-id="b5dcd67"
+        data-element_type="section"
+        data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'
+      >
+        <div class="elementor-background-overlay"></div>
+        <div class="elementor-container elementor-column-gap-no">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-fb3fdbb"
+            data-id="fb3fdbb"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-54a2ac3 hidden-onilife-title-single-yes elementor-widget elementor-widget-onilife-breadcrumb"
+                data-id="54a2ac3"
+                data-element_type="widget"
+                data-widget_type="onilife-breadcrumb.default"
+              >
+                <div class="elementor-widget-container">
+                  <div
+                    class="breadcrumb"
+                    typeof="BreadcrumbList"
+                    vocab=""
+                  >
+                    <div class="breadcrumb-listItem">
+                      <span property="itemListElement" typeof="ListItem"
+                        ><a
+                          property="item"
+                          typeof="WebPage"
+                          title="Go to Home."
+                          href="{% url 'index' %}"
+                          class="home"
+                          ><span property="name">Home</span></a
+                        ><meta property="position" content="1" /></span
+                      ><i class="onilife-icon-minus"></i
+                      ><span property="itemListElement" typeof="ListItem"
+                        ><a
+                          property="item"
+                          typeof="WebPage"
+                          title="Go to Blog."
+                          href="{% url 'careers' %}"
+                          class="post-root post post-post"
+                          ><span property="name">Careers</span></a
+                        ><meta property="position" content="2" /></span
+                      ><i class="onilife-icon-minus"></i
+                      ><span property="itemListElement" typeof="ListItem"
+                        ><span
+                          property="name"
+                          class="archive taxonomy post_tag current-item"
+                          >{{career.title}}</span
+                        ><meta property="url" content="{% url 'index' %}" /><meta
+                          property="position"
+                          content="3"
+                      /></span>
+                    </div>
+                    <h1 class="onilife-title">{{career.title}}</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div id="content" class="site-content" tabindex="-1">
+    <div class="col-full">
+      <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+          <header class="page-header"></header>
+          <article
+            id="post-32"
+            class="article-default post-32 post type-post status-publish format-standard has-post-thumbnail hentry category-company-news tag-advertising tag-business tag-consulting tag-finacial tag-office tag-topics"
+          >
+            <div class="post-thumbnail">
+              <img
+                width="1000"
+                height="565"
+                src="{{career.image.url}}"
+                class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                alt=""
+                style="max-height:565px !important; object-fit:cover;"
+              />
+            </div>
+            <div class="post-content">
+              <header class="entry-header">
+                <h3 class="entry-title">
+                  <a
+                  href="javascript:function() { return false; }" 
+                  style="pointer-events: none;"
+                    rel="bookmark"
+                    >{{career.title}}</a
+                  >
+                </h3>
+                <div class="entry-meta">
+                  <div class="post-author">
+                    <span>By </span
+                    ><a
+                      href="javascript:function() { return false; }" 
+                      style="pointer-events: none;"
+                      class="url fn"
+                      rel="author"
+                      >admin</a
+                    >
+                  </div>
+                  <div class="posted-on">
+                    <a
+                    href="javascript:function() { return false; }" 
+                    style="pointer-events: none;"
+                      rel="bookmark"
+                      >{{career.date_posted}}</a
+                    >
+                  </div>
+                </div>
+              </header>
+              <div class="entry-content">
+                <p>
+                  {{career.description}}
+                </p>
+              </div>
+            </div>
+          </article>
+          
+        </main>
+      </div>
+      <!-- About -->
+      <div id="secondary" class="widget-area" role="complementary">
+        <div id="text-3" class="widget widget_text">
+          <div class="textwidget">
+            <div
+              data-elementor-type="section"
+              data-elementor-id="2240"
+              class="elementor elementor-2240"
+            >
+              <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-d9452e7 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                data-id="d9452e7"
+                data-element_type="section"
+              >
+                <div class="elementor-container elementor-column-gap-no">
+                  <div
+                    class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3e1ef3d"
+                    data-id="3e1ef3d"
+                    data-element_type="column"
+                  >
+                    <div
+                      class="elementor-widget-wrap elementor-element-populated"
+                    >
+                      <div
+                        class="elementor-element elementor-element-0724dbc elementor-widget elementor-widget-image"
+                        data-id="0724dbc"
+                        data-element_type="widget"
+                        data-widget_type="image.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <img
+                            width="300"
+                            height="220"
+                            src="{% static 'uploads/2022/09/blog_tpl.jpg' %}"
+                            class="attachment-full size-full"
+                            alt=""
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-11da317 elementor-widget elementor-widget-heading"
+                        data-id="11da317"
+                        data-element_type="widget"
+                        data-widget_type="heading.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <h5
+                            class="elementor-heading-title elementor-size-default"
+                          >
+                            About Savannah Supported Limited Living
+                          </h5>
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-8a121ed elementor-widget elementor-widget-text-editor"
+                        data-id="8a121ed"
+                        data-element_type="widget"
+                        data-widget_type="text-editor.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores veritatis vitae reprehenderit tenetur at magnam, veniam labore nobis quae? Delectus.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-2747bf4 elementor-button-typo-link button-style-onilife-yes elementor-widget elementor-widget-button"
+                        data-id="2747bf4"
+                        data-element_type="widget"
+                        data-widget_type="button.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-button-wrapper">
+                            <a
+                              href="{% url 'schedule_visit' %}"
+                              class="elementor-button-link elementor-button elementor-size-sm"
+                              role="button"
+                            >
+                              <span
+                                class="elementor-button-content-wrapper"
+                              >
+                                <span
+                                  class="elementor-button-icon elementor-align-icon-right"
+                                >
+                                  <i
+                                    aria-hidden="true"
+                                    class="onilife-icon- onilife-icon-chevron-circle-right"
+                                  ></i>
+                                </span>
+                                <span class="elementor-button-text"
+                                  >schedule a visit</span
+                                >
+                              </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- About -->
+    </div>
+  </div>
+{% endblock content %}

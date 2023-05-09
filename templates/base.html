@@ -15,7 +15,7 @@
 </head>
 
 <body
-    class="onilife_living-template-default single single-onilife_living postid-1399 wp-embed-responsive ehf-header ehf-footer ehf-template-onilife ehf-stylesheet-demo-child no-wc-breadcrumb theme-onilife onilife-full-width-content has-post-thumbnail elementor-default elementor-kit-4 elementor-page elementor-page-1399">
+    class="{% if '/career/' in request.path %} archive tag tag-business tag-32 wp-embed-responsive ehf-header ehf-footer ehf-template-onilife ehf-stylesheet-demo-child no-wc-breadcrumb theme-onilife has-post-thumbnail elementor-default elementor-kit-4 {% else %} onilife_living-template-default archive tag tag-business tag-32 single single-onilife_living postid-1399 wp-embed-responsive ehf-header ehf-footer ehf-template-onilife ehf-stylesheet-demo-child no-wc-breadcrumb theme-onilife onilife-full-width-content has-post-thumbnail elementor-default elementor-kit-4 elementor-page elementor-page-1399 {% endif %}">
     <div id="page" class="hfeed site">
 
         {% include "partials/navbar.html" %}

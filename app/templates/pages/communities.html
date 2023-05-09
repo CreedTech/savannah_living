@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-  Communities
+  Admissions
 {% endblock title %}
 
 {% block content %}
@@ -29,13 +29,13 @@
                                             <meta property="position" content="1">
                                         </span><i class="onilife-icon-minus"></i><span
                                             property="itemListElement" typeof="ListItem"><span property="name"
-                                                class="post post-page current-item">Our Communities</span>
+                                                class="post post-page current-item">Admissions</span>
                                             <meta property="url" content="{% url 'index' %}">
                                             <meta property="position" content="2">
                                         </span>
                                     </div>
                                     <h1 class="onilife-title">
-                                        Our Communities </h1>
+                                        Admissions</h1>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                                                                             <div class="left">
                                                                                 <div class="top">
                                                                                     <h4 class="entry-title"><a
-                                                                                            href="{% url 'community' house.slug %}">{{house.name}}</a></h4>
+                                                                                            href="{% url 'admission' house.slug %}">{{house.name}}</a></h4>
                                                                                     <div class="address">
                                                                                         {{house.address}}
                                                                                     </div>
@@ -148,7 +148,7 @@
                                                                                 </div>
                                                                                 <div class="communities-button">
                                                                                     <a class="button-more-link button"
-                                                                                        href="{% url 'community' house.slug %}">
+                                                                                        href="{% url 'admission' house.slug %}">
                                                                                         <span>learn
                                                                                             more</span><i
                                                                                             class="onilife-icon-chevron-circle-right"></i>

@@ -102,12 +102,12 @@
                             <div class="elementor-widget-container">
                                 <div class="hfe-site-logo">
                                     <a data-elementor-open-lightbox="" class="elementor-clickable"
-                                        href="{% url 'about' %}">
-                                        <div class="hfe-site-logo-set">
-                                            <div class="hfe-site-logo-container">
+                                        href="{% url 'index' %}">
+                                        <div class="hfe-site-logo-set" style="padding:0px !important">
+                                            <div class="hfe-site-logo-container" style="padding:0px !important">
                                                 <img class="hfe-site-logo-img elementor-animation-"
-                                                    src="{% static 'uploads/2022/09/savannah_logo-removebg-preview.png' %}"
-                                                    style="width: 159px !important; height:100% !important"
+                                                    src="{% static 'uploads/2022/09/savannah-logo-removebg-preview.png' %}"
+                                                    style="width: 159px !important; height:200px !important; padding:0px !important"
                                                     alt="logo (1)" />
                                             </div>
                                         </div>
@@ -153,8 +153,8 @@
                                                    
                                                 </li>
                                                 <li id="menu-item-1804"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom {% if request.path == '/communities/' %} current-menu-item  {% endif %} menu-item-1804">
-                                                <a href="{% url 'communities' %}"><span
+                                                class="menu-item menu-item-type-custom menu-item-object-custom {% if request.path == '/admissions/' %} current-menu-item  {% endif %} menu-item-1804">
+                                                <a href="{% url 'admissions' %}"><span
                                                     class="menu-title">Admissions</span></a>
                                                
                                             </li>
@@ -169,7 +169,7 @@
                                                 </li>
                                                 <li id="menu-item-1804"
                                                     class="menu-item menu-item-type-custom menu-item-object-custom {% if request.path == '/careers/' %} current-menu-item  {% endif %}  menu-item-1804">
-                                                    <a href=""><span class="menu-title">Careers</span></a>
+                                                    <a href="{% url 'careers' %}"><span class="menu-title">Careers</span></a>
                                                 
                                                 </li>
                                             </ul>

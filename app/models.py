@@ -54,7 +54,7 @@ class LivingOptionsCategory(models.Model):
 
 
 class LivingOptions(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(
         upload_to='living_options/images',
@@ -83,7 +83,7 @@ class LivingOptions(models.Model):
 class House(models.Model):
 
     # Add any other fields you need for the house model here
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=100)
     address = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=20)
     description = models.TextField(null=True, blank=True)
@@ -125,3 +125,36 @@ class Category(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super().save(*args, **kwargs)
+
+
+class Career(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField(null=True, blank=True)
+    image = models.ImageField(
+        upload_to='careers/images',
+        max_length=500,
+        validators=[
+            FileExtensionValidator(
+                  allowed_extensions=[
+                      'png', 'jpg', 'jpeg', 'webp'
+                  ]
+            )
+        ],
+    )
+    date_posted = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateField(auto_now=True)
+    slug = AutoSlugField(
+        unique=True, populate_from='title', sep='-', null=True)
+    
+
+    class Meta:
+        verbose_name = ("Career")
+        verbose_name_plural = ("Careers")
+
+    def __str__(self):
+        return self.title
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
