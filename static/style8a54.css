@@ -1836,6 +1836,7 @@ ul.menu li.current-menu-parent > a {
   padding: 1em 1.5em;
   font-size: 16px;
   font-weight: 600;
+  color: #fff;
 }
 .main-navigation ul.menu > li.menu-item.current-menu-parent > a,
 .main-navigation ul.menu > li.menu-item.current-menu-item > a,
