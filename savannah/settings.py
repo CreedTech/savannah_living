@@ -10,7 +10,7 @@ SECRET_KEY = config("SECRET_KEY", default="MY SECRET KEY!!!")
 
 DEBUG = True
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="127.0.0.1,localhost,savannahiving.herokuapp.com", cast=Csv())
 
 
 
